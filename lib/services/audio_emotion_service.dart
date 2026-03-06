@@ -5,9 +5,11 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../models/emotion_result.dart';
 
 class AudioEmotionService {
-  static const String _modelUrl ='https://api-inference.huggingface.co/models/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition';
+  static const String _modelUrl =
+      'https://api-inference.huggingface.co/models/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition';
+  // static const String _modelUrl ='https://huggingface.co/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition';
 
- static Future<List<EmotionResult>> detectEmotionFromAudio(
+  static Future<List<EmotionResult>> detectEmotionFromAudio(
     Uint8List audioBytes,
   ) async {
     final apiKey = dotenv.env['HF_API_KEY'];
